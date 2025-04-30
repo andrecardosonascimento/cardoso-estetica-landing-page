@@ -1,229 +1,139 @@
-
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from 'lucide-react';
+import React, { useState, FormEvent } from 'react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
-  
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
-  };
-  
-  const handleSubmit = (e) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+  const [privacy, setPrivacy] = useState(false);
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log('Form data submitted:', formData);
-    setFormSubmitted(true);
-    
-    // Reset form after submission
+
+    if (!name || !email || !phone || !message || !privacy) {
+      setError('Por favor, preencha todos os campos e concorde com a política de privacidade.');
+      setSuccess('');
+      return;
+    }
+
+    // Simulate form submission
     setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
-      });
-      setFormSubmitted(false);
-    }, 5000);
+      console.log('Form submitted', { name, email, phone, message, privacy });
+      setSuccess('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+      setError('');
+      setName('');
+      setEmail('');
+      setPhone('');
+      setMessage('');
+      setPrivacy(false);
+    }, 2000);
   };
 
   return (
-    <section id="contato" className="section-padding bg-gray-50">
-      <div className="container mx-auto container-padding">
-        <div className="text-center mb-12 reveal">
-          <h2 className="section-title">Entre em Contato</h2>
-          <p className="section-subtitle">Estamos prontos para atender você e tirar todas as suas dúvidas</p>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="bg-white p-8 rounded-lg shadow-md reveal">
-            <h3 className="text-2xl font-playfair font-semibold text-gc-primary1 mb-6">
-              Envie-nos uma mensagem
-            </h3>
-            
-            {formSubmitted ? (
-              <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-lg mb-6">
-                <p className="font-medium">Mensagem enviada com sucesso!</p>
-                <p className="text-sm mt-1">Entraremos em contato em breve.</p>
+    <section id="contato" className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h3 className="text-2xl font-playfair font-semibold mb-6 text-gc-primary1">Entre em contato</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nome</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gc-primary2 focus:ring-gc-primary2 sm:text-sm"
+                  required
+                />
               </div>
-            ) : null}
-            
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-gray-700 mb-2">Nome completo</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gc-primary2 focus:border-transparent" 
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gc-primary2 focus:ring-gc-primary2 sm:text-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Telefone</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gc-primary2 focus:ring-gc-primary2 sm:text-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Mensagem</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  rows={4}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gc-primary2 focus:ring-gc-primary2 sm:text-sm"
                   required
                 />
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label htmlFor="email" className="block text-gray-700 mb-2">E-mail</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gc-primary2 focus:border-transparent" 
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-gray-700 mb-2">Telefone/WhatsApp</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    name="phone" 
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gc-primary2 focus:border-transparent" 
-                    required
-                  />
-                </div>
+              <div className="flex items-center">
+                {/* Correção aqui: converter string para boolean */}
+                <input 
+                  type="checkbox" 
+                  id="privacy" 
+                  name="privacy" 
+                  required 
+                  className="h-4 w-4 text-gc-primary2 focus:ring-gc-primary2 border-gray-300 rounded"
+                  checked={privacy === true}
+                  onChange={(e) => setPrivacy(e.target.checked)}
+                />
+                <label htmlFor="privacy" className="ml-2 block text-sm text-gray-700">
+                  Concordo com a <a href="#" className="text-gc-primary2 hover:underline">Política de Privacidade</a>
+                </label>
               </div>
               
-              <div className="mb-4">
-                <label htmlFor="service" className="block text-gray-700 mb-2">Serviço de interesse</label>
-                <select 
-                  id="service" 
-                  name="service" 
-                  value={formData.service}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gc-primary2 focus:border-transparent appearance-none" 
-                  required
+              <div>
+                <button
+                  type="submit"
+                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gc-primary2 hover:bg-gc-primary1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gc-primary2"
                 >
-                  <option value="" disabled>Selecione um serviço</option>
-                  <option value="limpeza">Limpeza de Pele</option>
-                  <option value="radiofrequencia">Radiofrequência</option>
-                  <option value="microagulhamento">Microagulhamento</option>
-                  <option value="drenagem">Drenagem Linfática</option>
-                  <option value="peeling">Peeling Químico</option>
-                  <option value="criolipolise">Criolipólise</option>
-                  <option value="outro">Outro</option>
-                </select>
+                  Enviar mensagem
+                </button>
               </div>
-              
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 mb-2">Mensagem (opcional)</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gc-primary2 focus:border-transparent h-32" 
-                ></textarea>
-              </div>
-              
-              <button type="submit" className="btn-primary w-full">
-                Enviar mensagem
-              </button>
+              {success && <p className="text-green-500">{success}</p>}
+              {error && <p className="text-red-500">{error}</p>}
             </form>
           </div>
-          
-          {/* Contact Info */}
-          <div className="reveal">
-            <h3 className="text-2xl font-playfair font-semibold text-gc-primary1 mb-6">
-              Informações de Contato
-            </h3>
-            
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 bg-gc-complement1 p-3 rounded-lg mr-4">
-                  <MapPin className="w-6 h-6 text-gc-primary1" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800 mb-1">Endereço</h4>
-                  <p className="text-gray-600">Avenida Paulista, 1000, Sala 301</p>
-                  <p className="text-gray-600">Bela Vista - São Paulo, SP</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="flex-shrink-0 bg-gc-complement1 p-3 rounded-lg mr-4">
-                  <Phone className="w-6 h-6 text-gc-primary1" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800 mb-1">Telefone/WhatsApp</h4>
-                  <p className="text-gray-600">(11) 99999-9999</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="flex-shrink-0 bg-gc-complement1 p-3 rounded-lg mr-4">
-                  <Mail className="w-6 h-6 text-gc-primary1" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800 mb-1">E-mail</h4>
-                  <p className="text-gray-600">contato@giselecardoso.com.br</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="flex-shrink-0 bg-gc-complement1 p-3 rounded-lg mr-4">
-                  <Clock className="w-6 h-6 text-gc-primary1" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-800 mb-1">Horário de funcionamento</h4>
-                  <p className="text-gray-600">Segunda a Sexta: 9h às 19h</p>
-                  <p className="text-gray-600">Sábado: 9h às 15h</p>
-                </div>
-              </div>
-            </div>
-            
-            <h4 className="font-medium text-gray-800 mb-4">Siga-nos nas redes sociais</h4>
-            <div className="flex space-x-4">
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-gc-primary2 hover:bg-gc-highlight p-3 rounded-full text-white transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-gc-primary2 hover:bg-gc-highlight p-3 rounded-full text-white transition-colors"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-            </div>
-            
-            <div className="mt-8">
-              <h4 className="font-medium text-gray-800 mb-4">Nossa localização</h4>
-              <div className="rounded-lg overflow-hidden h-64 shadow-md">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976900292284!2d-46.65390508467358!3d-23.5650887846719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1651165309047!5m2!1spt-BR!2sbr" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen="" 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h3 className="text-2xl font-playfair font-semibold mb-6 text-gc-primary1">Informações de contato</h3>
+            <p className="text-gray-700 mb-4">
+              Estamos ansiosos para atendê-lo(a)! Entre em contato conosco para agendar sua avaliação ou tirar suas dúvidas.
+            </p>
+            <ul className="space-y-2">
+              <li className="flex items-center">
+                <svg className="w-5 h-5 mr-2 text-gc-primary2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7a2 2 0 012.828 0l7 7m0 0l2 2m-2-2l-2 2m-2-2H9.5M18 12h-6m-6 6v-6m0 0v-6"></path></svg>
+                <a href="#" className="text-gray-700 hover:text-gc-primary2">Endereço: Rua da Estética, 123 - São Paulo, SP</a>
+              </li>
+              <li className="flex items-center">
+                <svg className="w-5 h-5 mr-2 text-gc-primary2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1c-1.387 0-2.497-1.007-2.497-2.497v-1.166a1 1 0 01.05-.443l.48-1.437a1 1 0 01.642-.538l1.476-.246a1 1 0 01.737.343l.706.706a1 1 0 01-.171 1.051l-1.032 1.032a10.993 10.993 0 01-1.032-1.032l.706-.706a1 1 0 01.343-.737l-.246-1.476a1 1 0 01-.538-.642l-1.437.48a1 1 0 01-.443.05V5.497A2.497 2.497 0 015.497 3H4a2 2 0 01-2 2z"></path></svg>
+                <a href="tel:+5511999999999" className="text-gray-700 hover:text-gc-primary2">Telefone: +55 11 99999-9999</a>
+              </li>
+              <li className="flex items-center">
+                <svg className="w-5 h-5 mr-2 text-gc-primary2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.224 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <a href="mailto:contato@giselecardosoestetica.com.br" className="text-gray-700 hover:text-gc-primary2">Email: contato@giselecardosoestetica.com.br</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
