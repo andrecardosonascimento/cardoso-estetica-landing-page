@@ -46,20 +46,21 @@ const About = () => {
               Gisele Cardoso
             </h3>
             <p className="text-gray-700 mb-6">
-              Com mais de 15 anos de experiência no mercado de estética, Gisele Cardoso é especialista em tratamentos faciais e corporais personalizados. Graduada em Estética e Cosmética pela Universidade de São Paulo e com diversas especializações internacionais, Gisele fundou sua clínica com a missão de transformar a autoestima de seus clientes através de tratamentos inovadores e eficazes.
-            </p>
-            <p className="text-gray-700 mb-6">
-              Nossa missão é proporcionar um atendimento exclusivo e personalizado, utilizando produtos e equipamentos de alta qualidade, sempre com foco nos resultados e na satisfação dos nossos clientes.
+              Com mais de 15 anos de experiência no mercado de estética, Gisele Cardoso é especialista em tratamentos faciais e corporais personalizados. Graduada em Estética e com diversas vivencias, Gisele fundou sua clínica com a missão de transformar a autoestima de seus clientes através de tratamentos inovadores e eficazes.
             </p>
             
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
               <div className="bg-white p-4 rounded-lg shadow-md border border-gc-complement2/20">
                 <h4 className="font-playfair text-gc-primary2 font-semibold mb-2">Missão</h4>
-                <p className="text-sm text-gray-600">Promover beleza e bem-estar com tratamentos personalizados e resultados visíveis.</p>
+                <p className="text-sm text-gray-600">Minha missão é promover a autoestima e o amor-próprio dos meus pacientes por meio de experiências estéticas transformadoras. Acredito que cada pessoa merece sentir-se confiante e bela, e estou comprometido em oferecer cuidados personalizados.</p>
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow-md border border-gc-complement2/20">
+                <h4 className="font-playfair text-gc-primary2 font-semibold mb-2">Visão</h4>
+                <p className="text-sm text-gray-600">Minha meta é desenvolver um espaço acolhedor e inspirador, onde cada paciente se sinta valorizado e fortalecido em sua trajetória de amor-próprio. Quero ser vista como uma referência em estética humana, promovendo não apenas a beleza externa, mas também o bem-estar interior.</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-md border border-gc-complement2/20">
                 <h4 className="font-playfair text-gc-primary2 font-semibold mb-2">Valores</h4>
-                <p className="text-sm text-gray-600">Excelência, ética, inovação e compromisso com resultados reais.</p>
+                <p className="text-sm text-gray-600">Acredito firmemente que todos merecem se sentir autoconfiantes e belos. Valorizo a individualidade de cada um, oferecendo tratamentos personalizados que atendem às suas necessidades e desejos específicos, sempre com carinho e atenção.</p>
               </div>
             </div>
           </div>

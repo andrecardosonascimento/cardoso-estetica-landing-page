@@ -1,43 +1,39 @@
 
 import React, { useState } from 'react';
+import {
+  Current,
+  Radio
+} from 'lucide-react';
 
-const portfolioItems = [
+const aparelhosItems = [
   {
     id: 1,
-    title: "Radiofrequência Facial",
-    description: "Redução de rugas e linhas finas com 6 sessões",
-    image: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    title: "Corrente Russa",
+    description: "A corrente russa serve para tonificar e fortalecer a musculatura, melhorar a circulação sanguínea e promover a drenagem linfática, além de combater a flacidez. Pode ser utilizada para melhorar o tônus muscular em várias partes do corpo, como abdómen, glúteos, coxas e braços.",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    icon: <Current className="w-10 h-10 text-white" />
   },
   {
     id: 2,
-    title: "Tratamento Corporal",
-    description: "Redução de medidas com 12 sessões",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    title: "Ultrassom",
+    description: "A ultracavitação com ultrassom é uma técnica estética não invasiva que utiliza ondas sonoras para eliminar a gordura localizada, remodelar o corpo e reduzir a celulite. É uma alternativa à lipoaspiração, proporcionando resultados visíveis sem a necessidade de incisões.",
+    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    icon: <Radio className="w-10 h-10 text-white" />
   },
   {
     id: 3,
-    title: "Limpeza de Pele",
-    description: "Melhora significativa da textura e luminosidade",
-    image: "https://images.unsplash.com/photo-1570174006382-115a73480745?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    title: "Manta térmica",
+    description: "Ajuda na queima de gordura, pois através do calor para ajudar na redução de gordura localizada.",
+    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    icon: <Radio className="w-10 h-10 text-white" />
   },
   {
     id: 4,
-    title: "Microagulhamento",
-    description: "Redução de cicatrizes de acne com 4 sessões",
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-  },
-  {
-    id: 5,
-    title: "Peeling Químico",
-    description: "Tratamento de manchas e uniformização da pele",
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-  },
-  {
-    id: 6,
-    title: "Criolipólise",
-    description: "Redução de gordura localizada no abdômen",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-  },
+    title: "Radiofrequência",
+    description: "As ondas eletromagnéticas da radiofrequência aquecem a pele, causando contração do colágeno e estimulando a produção de novo colágeno. O calor também ajuda a romper células de gordura, reduzindo a gordura localizada no abdômen e culote. Além disso, melhora a microcirculação, facilitando a eliminação de toxinas e aprimorando a aparência da pele.",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    icon: <Radio className="w-10 h-10 text-white" />
+  }
 ];
 
 const Portfolio = () => {
@@ -55,12 +51,12 @@ const Portfolio = () => {
     <section id="portfolio" className="section-padding bg-gray-50">
       <div className="container mx-auto container-padding">
         <div className="text-center mb-12 reveal">
-          <h2 className="section-title">Portfólio de Resultados</h2>
-          <p className="section-subtitle">Conheça alguns dos resultados que alcançamos com nossos tratamentos</p>
+          <h2 className="section-title">APARELHOS</h2>
+          <p className="section-subtitle">Conheça os equipamentos que utilizamos em nossos tratamentos</p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {portfolioItems.map((item) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+          {aparelhosItems.map((item) => (
             <div key={item.id} className="reveal">
               <div 
                 className="before-after-container rounded-lg overflow-hidden cursor-pointer"
@@ -72,10 +68,11 @@ const Portfolio = () => {
                   className="w-full h-64 object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="overlay rounded-lg">
+                  <div className="mb-4">{item.icon}</div>
                   <h3 className="text-xl font-playfair font-semibold text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-white text-sm">{item.description}</p>
+                  <p className="text-white text-sm line-clamp-2">{item.description}</p>
                   <button className="mt-4 bg-white text-gc-primary2 px-4 py-2 rounded-md font-medium text-sm hover:bg-gray-100 transition-colors">
                     Ver detalhes
                   </button>
@@ -110,14 +107,6 @@ const Portfolio = () => {
                 {selectedItem.title}
               </h3>
               <p className="text-gray-600 mb-4">{selectedItem.description}</p>
-              <div className="bg-gray-100 p-4 rounded-lg mb-4">
-                <h4 className="font-medium text-gray-800 mb-2">Detalhes do Tratamento:</h4>
-                <ul className="list-disc list-inside text-gray-700 space-y-1">
-                  <li>Duração: 6-8 semanas</li>
-                  <li>Sessões: 4-6 sessões</li>
-                  <li>Tempo de recuperação: mínimo</li>
-                </ul>
-              </div>
               <button 
                 className="btn-primary w-full"
                 onClick={() => {
@@ -125,7 +114,7 @@ const Portfolio = () => {
                   document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Quero esse tratamento
+                Quero agendar um horário
               </button>
             </div>
           </div>
