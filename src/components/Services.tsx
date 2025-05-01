@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Droplets,
@@ -7,7 +6,7 @@ import {
   Eraser,
   Scissors,
   Radio,
-  Current,
+  Zap,
 } from 'lucide-react';
 
 const corporalServicesData = [

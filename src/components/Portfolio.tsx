@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import {
-  Current,
+  Zap,
   Radio
 } from 'lucide-react';
 
@@ -11,7 +11,7 @@ const aparelhosItems = [
     title: "Corrente Russa",
     description: "A corrente russa serve para tonificar e fortalecer a musculatura, melhorar a circulação sanguínea e promover a drenagem linfática, além de combater a flacidez. Pode ser utilizada para melhorar o tônus muscular em várias partes do corpo, como abdómen, glúteos, coxas e braços.",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    icon: <Current className="w-10 h-10 text-white" />
+    icon: <Zap className="w-10 h-10 text-white" />
   },
   {
     id: 2,
