@@ -34,7 +34,7 @@ const About = () => {
           <div className="reveal">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="public/lovable-uploads/b6e7004c-9ed2-4106-ab4d-1cb19055ef3c.png" 
+                src="/lovable-uploads/b6e7004c-9ed2-4106-ab4d-1cb19055ef3c.png" 
                 alt="Gisele Cardoso, Esteticista" 
                 className="w-full h-auto"
               />
