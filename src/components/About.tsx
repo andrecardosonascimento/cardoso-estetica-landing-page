@@ -34,7 +34,7 @@ const About = () => {
           <div className="reveal">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                src="public/lovable-uploads/b6e7004c-9ed2-4106-ab4d-1cb19055ef3c.png" 
                 alt="Gisele Cardoso, Esteticista" 
                 className="w-full h-auto"
               />
@@ -46,7 +46,7 @@ const About = () => {
               Gisele Cardoso
             </h3>
             <p className="text-gray-700 mb-6">
-              Com mais de 15 anos de experiência no mercado de estética, Gisele Cardoso é especialista em tratamentos faciais e corporais personalizados. Graduada em Estética e com diversas vivencias, Gisele fundou sua clínica com a missão de transformar a autoestima de seus clientes através de tratamentos inovadores e eficazes.
+              Olá! Eu sou a Gisele Cardoso, especialista em tratamentos faciais e corporais personalizados. Sou graduada em Estética e, ao longo dos anos, tive diversas experiências incríveis na área. Criei minha clínica com muito carinho e dedicação, com a missão de ajudar você a se sentir ainda melhor consigo mesma, por meio de tratamentos inovadores, eficazes e pensados especialmente para cada necessidade! Siga abaixo para conhecer um pouco do meu trabalho
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">

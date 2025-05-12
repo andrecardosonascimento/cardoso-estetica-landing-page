@@ -4,33 +4,44 @@ import {
   Zap,
   Radio
 } from 'lucide-react';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 const aparelhosItems = [
   {
     id: 1,
     title: "Corrente Russa",
-    description: "A corrente russa serve para tonificar e fortalecer a musculatura, melhorar a circulação sanguínea e promover a drenagem linfática, além de combater a flacidez. Pode ser utilizada para melhorar o tônus muscular em várias partes do corpo, como abdómen, glúteos, coxas e braços.",
+    description: "A corrente russa serve para tonificar e fortalecer a musculatura, melhorar a circulação sanguínea e promover a drenagem linfática, além de combater a flacidez.",
+    benefits: "Fortalecimento muscular, melhora da circulação, combate à flacidez, tonificação de abdômen, glúteos e coxas.",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     icon: <Zap className="w-10 h-10 text-white" />
   },
   {
     id: 2,
     title: "Ultrassom",
-    description: "A ultracavitação com ultrassom é uma técnica estética não invasiva que utiliza ondas sonoras para eliminar a gordura localizada, remodelar o corpo e reduzir a celulite. É uma alternativa à lipoaspiração, proporcionando resultados visíveis sem a necessidade de incisões.",
+    description: "A ultracavitação com ultrassom é uma técnica estética não invasiva que utiliza ondas sonoras para eliminar a gordura localizada e remodelar o corpo.",
+    benefits: "Redução de gordura localizada, alternativa não invasiva à lipoaspiração, diminuição da celulite, resultados visíveis sem incisões.",
     image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     icon: <Radio className="w-10 h-10 text-white" />
   },
   {
     id: 3,
     title: "Manta térmica",
-    description: "Ajuda na queima de gordura, pois através do calor para ajudar na redução de gordura localizada.",
+    description: "Ajuda na queima de gordura através do calor, contribuindo para a redução de gordura localizada e acelerando o metabolismo.",
+    benefits: "Aumento da queima de calorias, maior eliminação de toxinas, redução de medidas, potencialização de outros tratamentos.",
     image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     icon: <Radio className="w-10 h-10 text-white" />
   },
   {
     id: 4,
     title: "Radiofrequência",
-    description: "As ondas eletromagnéticas da radiofrequência aquecem a pele, causando contração do colágeno e estimulando a produção de novo colágeno. O calor também ajuda a romper células de gordura, reduzindo a gordura localizada no abdômen e culote. Além disso, melhora a microcirculação, facilitando a eliminação de toxinas e aprimorando a aparência da pele.",
+    description: "As ondas eletromagnéticas da radiofrequência aquecem a pele, causando contração do colágeno e estimulando a produção de novo colágeno.",
+    benefits: "Redução de flacidez, melhora na aparência da celulite, estímulo de colágeno, eliminação de toxinas, aparência de pele mais firme e jovem.",
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     icon: <Radio className="w-10 h-10 text-white" />
   }
@@ -55,31 +66,41 @@ const Portfolio = () => {
           <p className="section-subtitle">Conheça os equipamentos que utilizamos em nossos tratamentos</p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-          {aparelhosItems.map((item) => (
-            <div key={item.id} className="reveal">
-              <div 
-                className="before-after-container rounded-lg overflow-hidden cursor-pointer"
-                onClick={() => openModal(item)}
-              >
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="w-full h-64 object-cover transition-transform duration-300 hover:scale-110"
-                />
-                <div className="overlay rounded-lg">
-                  <div className="mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-playfair font-semibold text-white mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-white text-sm line-clamp-2">{item.description}</p>
-                  <button className="mt-4 bg-white text-gc-primary2 px-4 py-2 rounded-md font-medium text-sm hover:bg-gray-100 transition-colors">
-                    Ver detalhes
-                  </button>
-                </div>
-              </div>
+        <div className="px-4 sm:px-8 md:px-12 lg:px-20">
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent>
+              {aparelhosItems.map((item) => (
+                <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/2">
+                  <div className="reveal p-2">
+                    <div 
+                      className="before-after-container rounded-lg overflow-hidden cursor-pointer h-[400px] relative"
+                      onClick={() => openModal(item)}
+                    >
+                      <img 
+                        src={item.image} 
+                        alt={item.title} 
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                      />
+                      <div className="overlay rounded-lg absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6 text-center">
+                        <div className="mb-4">{item.icon}</div>
+                        <h3 className="text-xl font-playfair font-semibold text-white mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-white text-sm line-clamp-2 mb-2">{item.description}</p>
+                        <button className="mt-4 bg-white text-gc-primary2 px-4 py-2 rounded-md font-medium text-sm hover:bg-gray-100 transition-colors">
+                          Ver detalhes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-2 mt-8">
+              <CarouselPrevious className="static transform-none mx-2 bg-gc-primary1 text-white hover:bg-gc-primary2 hover:text-white border-none" />
+              <CarouselNext className="static transform-none mx-2 bg-gc-primary1 text-white hover:bg-gc-primary2 hover:text-white border-none" />
             </div>
-          ))}
+          </Carousel>
         </div>
       </div>
       
@@ -107,6 +128,10 @@ const Portfolio = () => {
                 {selectedItem.title}
               </h3>
               <p className="text-gray-600 mb-4">{selectedItem.description}</p>
+              
+              <h4 className="font-medium text-gc-primary2 mb-2">Principais benefícios:</h4>
+              <p className="text-gray-600 mb-4">{selectedItem.benefits}</p>
+              
               <button 
                 className="btn-primary w-full"
                 onClick={() => {
