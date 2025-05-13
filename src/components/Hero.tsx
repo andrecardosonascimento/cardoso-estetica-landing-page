@@ -17,11 +17,11 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center text-white">
         <div className="animate-fade-in">
-          <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-white drop-shadow-lg">
             Gisele Cardoso Estética
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Beleza e bem-estar em harmonia
+          <p className="text-2xl md:text-3xl mb-10 max-w-3xl mx-auto italic font-medium drop-shadow-md">
+            Cuidando da sua beleza e autoestima!
           </p>
           <a href="#contato" className="btn-primary text-lg">
             Agende sua consulta
