@@ -62,7 +62,7 @@ const Portfolio = () => {
       <div className="container mx-auto container-padding">
         <div className="text-center mb-12 reveal">
           <h2 className="section-title">APARELHOS</h2>
-          <p className="section-subtitle">Conheça os equipamentos que utilizamos em nossos tratamentos</p>
+          <p className="section-subtitle">Conheça os equipamentos que utilizo em meus tratamentos</p>
         </div>
         
         <div className="px-4 sm:px-8 md:px-12 lg:px-20">

@@ -27,7 +27,7 @@ const About = () => {
       <div className="container mx-auto container-padding">
         <div className="text-center mb-12 reveal">
           <h2 className="section-title">Sobre a Clínica</h2>
-          <p className="section-subtitle">Conheça um pouco da nossa história e filosofia</p>
+          <p className="section-subtitle">Conheça um pouco da minha história</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

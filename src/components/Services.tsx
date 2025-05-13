@@ -110,8 +110,8 @@ const Services = () => {
     <section id="servicos" className="section-padding">
       <div className="container mx-auto container-padding">
         <div className="text-center mb-12 reveal">
-          <h2 className="section-title">Nossos Serviços</h2>
-          <p className="section-subtitle">Conheça os tratamentos exclusivos que oferecemos para realçar sua beleza natural</p>
+          <h2 className="section-title">Meus serviços</h2>
+          <p className="section-subtitle">Conheça os tratamentos que oferecemo para realçar sua beleza natural</p>
         </div>
         
         {/* Tratamentos Corporais */}

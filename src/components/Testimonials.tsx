@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 
 const testimonialsData = [
@@ -82,8 +81,7 @@ const Testimonials = () => {
     <section id="depoimentos" className="section-padding">
       <div className="container mx-auto container-padding">
         <div className="text-center mb-12 reveal">
-          <h2 className="section-title">Depoimentos</h2>
-          <p className="section-subtitle">O que nossos clientes dizem sobre nós</p>
+          <h2 className="section-title">Feedbacks</h2>
         </div>
         
         <div 
