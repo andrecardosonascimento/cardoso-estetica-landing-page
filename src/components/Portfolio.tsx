@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {
   Zap,
@@ -18,7 +17,7 @@ const aparelhosItems = [
     title: "Corrente Russa",
     description: "A corrente russa serve para tonificar e fortalecer a musculatura, melhorar a circulação sanguínea e promover a drenagem linfática, além de combater a flacidez.",
     benefits: "Fortalecimento muscular, melhora da circulação, combate à flacidez, tonificação de abdômen, glúteos e coxas.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    image: "/lovable-uploads/ed1d2c8c-2cb5-400e-ae12-30152f445e90.png",
     icon: <Zap className="w-10 h-10 text-white" />
   },
   {
@@ -26,7 +25,7 @@ const aparelhosItems = [
     title: "Ultrassom",
     description: "A ultracavitação com ultrassom é uma técnica estética não invasiva que utiliza ondas sonoras para eliminar a gordura localizada e remodelar o corpo.",
     benefits: "Redução de gordura localizada, alternativa não invasiva à lipoaspiração, diminuição da celulite, resultados visíveis sem incisões.",
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    image: "/lovable-uploads/e46148e1-e9a1-4e80-8908-7a9f07959e50.png",
     icon: <Radio className="w-10 h-10 text-white" />
   },
   {
@@ -42,7 +41,7 @@ const aparelhosItems = [
     title: "Radiofrequência",
     description: "As ondas eletromagnéticas da radiofrequência aquecem a pele, causando contração do colágeno e estimulando a produção de novo colágeno.",
     benefits: "Redução de flacidez, melhora na aparência da celulite, estímulo de colágeno, eliminação de toxinas, aparência de pele mais firme e jovem.",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    image: "/lovable-uploads/426c504e-57f3-4949-80d0-18a95cf56edf.png",
     icon: <Radio className="w-10 h-10 text-white" />
   }
 ];
