@@ -23,9 +23,6 @@ const Hero = () => {
           <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-semibold mb-10 text-white drop-shadow-md">
             Estética & Saúde
           </h2>
-          <a href="#contato" className="btn-primary text-lg">
-            Agende sua consulta
-          </a>
         </div>
       </div>
       
