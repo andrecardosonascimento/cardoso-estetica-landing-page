@@ -17,8 +17,10 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center text-white">
         <div className="animate-fade-in">
-          <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-2 text-white drop-shadow-lg">
-            Gisele Cardoso
+          <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-2 text-white drop-shadow-lg tracking-wide">
+            <span className="bg-gradient-to-r from-white via-gc-complement1 to-white bg-clip-text text-transparent animate-pulse">
+              Gisele Cardoso
+            </span>
           </h1>
           <p className="font-playfair text-2xl md:text-3xl lg:text-4xl font-medium mb-10 text-white drop-shadow-md">
             Estética e Saúde
