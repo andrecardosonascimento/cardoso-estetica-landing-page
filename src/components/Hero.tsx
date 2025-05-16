@@ -20,9 +20,9 @@ const Hero = () => {
           <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-2 text-white drop-shadow-lg">
             Gisele Cardoso
           </h1>
-          <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-semibold mb-10 text-white drop-shadow-md">
-            Estética & Saúde
-          </h2>
+          <p className="font-playfair text-2xl md:text-3xl lg:text-4xl font-medium mb-10 text-white drop-shadow-md">
+            Estética e Saúde
+          </p>
         </div>
       </div>
       
