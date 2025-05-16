@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   Droplets,
@@ -152,12 +153,6 @@ const Services = () => {
               </div>
             ))}
           </div>
-        </div>
-        
-        <div className="text-center mt-12 reveal">
-          <button className="btn-primary">
-            Ver todos os serviços
-          </button>
         </div>
       </div>
     </section>
