@@ -1,33 +1,39 @@
-import React, { useRef, useState, useEffect } from 'react';
 
-const testimonialsData = [
+import React, { useRef, useState, useEffect } from 'react';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
+
+// Imagens dos serviços - atualizadas para os novos uploads
+const servicosImages = [
   {
     id: 1,
-    name: "Ana Clara Silva",
-    age: 32,
-    text: "Estou extremamente satisfeita com os resultados do tratamento de radiofrequência. Minha pele está muito mais firme e as linhas finas reduziram significativamente. O atendimento da Gisele é impecável e acolhedor!",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
+    title: "Tratamento de Radiofrequência",
+    image: "/lovable-uploads/ed1d2c8c-2cb5-400e-ae12-30152f445e90.png"
   },
   {
     id: 2,
-    name: "Mariana Costa",
-    age: 29,
-    text: "A limpeza de pele da clínica Gisele Cardoso é sensacional! Minha pele ficou limpa, luminosa e os produtos utilizados são de excelente qualidade. Já agendei minha manutenção mensal!",
-    image: "https://randomuser.me/api/portraits/women/68.jpg"
+    title: "Tratamento de Ultrassom",
+    image: "/lovable-uploads/e46148e1-e9a1-4e80-8908-7a9f07959e50.png"
   },
   {
     id: 3,
-    name: "Juliana Mendes",
-    age: 41,
-    text: "Fiz o tratamento de microagulhamento para cicatrizes de acne e estou impressionada com os resultados. Em apenas 3 sessões, minhas cicatrizes diminuíram consideravelmente e a textura da pele melhorou muito.",
-    image: "https://randomuser.me/api/portraits/women/65.jpg"
+    title: "Tratamento Facial",
+    image: "/lovable-uploads/e67e801e-931f-42bd-84c5-6e642e78999f.png"
   },
   {
     id: 4,
-    name: "Camila Rodrigues",
-    age: 35,
-    text: "A drenagem linfática da Gisele é maravilhosa! Depois de algumas sessões, notei uma redução significativa do inchaço e da retenção de líquidos. Me sinto muito mais leve e disposta. Recomendo demais!",
-    image: "https://randomuser.me/api/portraits/women/54.jpg"
+    title: "Tratamento de Radiofrequência Facial",
+    image: "/lovable-uploads/426c504e-57f3-4949-80d0-18a95cf56edf.png"
+  },
+  {
+    id: 5,
+    title: "Tratamento de Corrente Russa",
+    image: "/lovable-uploads/b6e7004c-9ed2-4106-ab4d-1cb19055ef3c.png"
   }
 ];
 
@@ -35,15 +41,6 @@ const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  const testimonialRef = useRef(null);
-  
-  const nextTestimonial = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonialsData.length);
-  };
-  
-  const prevTestimonial = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + testimonialsData.length) % testimonialsData.length);
-  };
   
   const handleTouchStart = (e) => {
     setTouchStart(e.targetTouches[0].clientX);
@@ -60,100 +57,53 @@ const Testimonials = () => {
     const isRightSwipe = distance < -50;
     
     if (isLeftSwipe) {
-      nextTestimonial();
+      setActiveIndex((prevIndex) => (prevIndex + 1) % servicosImages.length);
     } else if (isRightSwipe) {
-      prevTestimonial();
+      setActiveIndex((prevIndex) => (prevIndex - 1 + servicosImages.length) % servicosImages.length);
     }
     
     setTouchStart(null);
     setTouchEnd(null);
   };
 
-  useEffect(() => {
-    const autoSlide = setInterval(() => {
-      nextTestimonial();
-    }, 6000);
-    
-    return () => clearInterval(autoSlide);
-  }, []);
-
   return (
-    <section id="depoimentos" className="section-padding">
+    <section id="fotos" className="section-padding">
       <div className="container mx-auto container-padding">
         <div className="text-center mb-12 reveal">
-          <h2 className="section-title">Feedbacks</h2>
+          <h2 className="section-title">Fotos dos meus serviços</h2>
+          <p className="section-subtitle">Confira alguns dos resultados dos tratamentos</p>
         </div>
         
-        <div 
-          className="relative max-w-4xl mx-auto"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          ref={testimonialRef}
-        >
-          {/* Testimonial Cards */}
-          <div className="overflow-hidden">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-            >
-              {testimonialsData.map((testimonial) => (
-                <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <div className="testimonial-card">
-                    <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-                      <div className="flex-shrink-0">
-                        <img 
-                          src={testimonial.image} 
-                          alt={testimonial.name} 
-                          className="w-20 h-20 rounded-full object-cover border-2 border-gc-primary2"
-                        />
-                      </div>
-                      <div>
-                        <div className="mb-4 text-gc-primary2">
-                          <svg className="w-8 h-8 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.51.88-3.995 3.356-3.995 5.743h4v10.106h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.511.88-3.996 3.356-3.996 5.743h4v10.106h-10z" />
-                          </svg>
-                        </div>
-                        <p className="text-gray-700 mb-6 italic">
-                          {testimonial.text}
-                        </p>
-                        <div>
-                          <h4 className="font-playfair text-lg font-semibold text-gc-primary1">
-                            {testimonial.name}
-                          </h4>
-                          <p className="text-gray-500 text-sm">{testimonial.age} anos</p>
-                        </div>
+        <div className="max-w-5xl mx-auto px-4">
+          <Carousel className="w-full">
+            <CarouselContent>
+              {servicosImages.map((item) => (
+                <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <div className="overflow-hidden rounded-xl aspect-square relative">
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                        <h3 className="text-white font-playfair text-lg">{item.title}</h3>
                       </div>
                     </div>
                   </div>
-                </div>
+                </CarouselItem>
               ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-2 mt-8">
+              <CarouselPrevious className="static transform-none mx-2 bg-gc-primary1 text-white hover:bg-gc-primary2 hover:text-white border-none" />
+              <CarouselNext className="static transform-none mx-2 bg-gc-primary1 text-white hover:bg-gc-primary2 hover:text-white border-none" />
             </div>
-          </div>
-          
-          {/* Navigation Arrows */}
-          <button 
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-5 bg-white p-3 rounded-full shadow-md hover:shadow-lg focus:outline-none z-10 hidden md:block"
-            onClick={prevTestimonial}
-          >
-            <svg className="w-5 h-5 text-gc-primary1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          
-          <button 
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-5 bg-white p-3 rounded-full shadow-md hover:shadow-lg focus:outline-none z-10 hidden md:block"
-            onClick={nextTestimonial}
-          >
-            <svg className="w-5 h-5 text-gc-primary1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          </Carousel>
         </div>
         
         {/* Dots Navigation */}
         <div className="flex justify-center mt-8 space-x-2">
-          {testimonialsData.map((_, index) => (
+          {servicosImages.map((_, index) => (
             <button
               key={index}
               className={`w-3 h-3 rounded-full focus:outline-none transition-colors duration-300 ${

@@ -1,15 +1,9 @@
+
 import React, { useState } from 'react';
 import {
   Zap,
   Radio
 } from 'lucide-react';
-import { 
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from "@/components/ui/carousel";
 
 const aparelhosItems = [
   {
@@ -58,48 +52,38 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="section-padding bg-gray-50">
+    <section id="aparelhos" className="section-padding bg-gray-50">
       <div className="container mx-auto container-padding">
         <div className="text-center mb-12 reveal">
           <h2 className="section-title">APARELHOS</h2>
           <p className="section-subtitle">Conheça os equipamentos que utilizo em meus tratamentos</p>
         </div>
         
-        <div className="px-4 sm:px-8 md:px-12 lg:px-20">
-          <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent>
-              {aparelhosItems.map((item) => (
-                <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/2">
-                  <div className="reveal p-2">
-                    <div 
-                      className="before-after-container rounded-lg overflow-hidden cursor-pointer h-[400px] relative"
-                      onClick={() => openModal(item)}
-                    >
-                      <img 
-                        src={item.image} 
-                        alt={item.title} 
-                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                      />
-                      <div className="overlay rounded-lg absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6 text-center">
-                        <div className="mb-4">{item.icon}</div>
-                        <h3 className="text-xl font-playfair font-semibold text-white mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-white text-sm line-clamp-2 mb-2">{item.description}</p>
-                        <button className="mt-4 bg-white text-gc-primary2 px-4 py-2 rounded-md font-medium text-sm hover:bg-gray-100 transition-colors">
-                          Ver detalhes
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center gap-2 mt-8">
-              <CarouselPrevious className="static transform-none mx-2 bg-gc-primary1 text-white hover:bg-gc-primary2 hover:text-white border-none" />
-              <CarouselNext className="static transform-none mx-2 bg-gc-primary1 text-white hover:bg-gc-primary2 hover:text-white border-none" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-8">
+          {aparelhosItems.map((item) => (
+            <div key={item.id} className="reveal">
+              <div 
+                className="before-after-container rounded-lg overflow-hidden cursor-pointer h-[280px] relative"
+                onClick={() => openModal(item)}
+              >
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
+                <div className="overlay rounded-lg absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6 text-center">
+                  <div className="mb-4">{item.icon}</div>
+                  <h3 className="text-xl font-playfair font-semibold text-white mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-white text-sm line-clamp-2 mb-2">{item.description}</p>
+                  <button className="mt-4 bg-white text-gc-primary2 px-4 py-2 rounded-md font-medium text-sm hover:bg-gray-100 transition-colors">
+                    Ver detalhes
+                  </button>
+                </div>
+              </div>
             </div>
-          </Carousel>
+          ))}
         </div>
       </div>
       
@@ -111,7 +95,7 @@ const Portfolio = () => {
               <img 
                 src={selectedItem.image} 
                 alt={selectedItem.title} 
-                className="w-full h-auto"
+                className={`w-full h-auto ${selectedItem.title === "Ultrassom" ? "max-h-[280px] object-contain" : ""}`}
               />
               <button 
                 className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg"
