@@ -45,7 +45,7 @@ const aparelhosItems = [
     title: "Vapor de Ozônio",
     description: "Vapor de ozônio representa um avanço significativo no campo da estética, oferecendo um método natural e eficaz para o cuidado da pele.",
     benefits: "Este tratamento é especialmente valioso para aqueles que buscam renovação, no combate à acne e na conquista de uma aparência radiante. Os resultados são visíveis e certamente promoverão uma pele mais saudável e luminosa.",
-    image: "/lovable-uploads/0660deef-3821-4756-9a48-baf590276c7c.png", // Vapor de ozônio image
+    image: "/lovable-uploads/02fce216-f3ae-40b0-83cc-46a9044af09e.png", // Updated Vapor de ozônio image
     icon: <Circle className="w-10 h-10 text-white" />
   },
   {
