@@ -36,7 +36,7 @@ const Header = () => {
           <a href="#servicos" className={`font-medium hover:text-gc-primary2 transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Serviços</a>
           <a href="#aparelhos" className={`font-medium hover:text-gc-primary2 transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Aparelhos</a>
           <a href="#contato" className={`btn-primary mx-2`}>Agende sua consulta</a>
-          <a href="#fotos" className={`font-medium hover:text-gc-primary2 transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Fotos dos meus serviços</a>
+          <a href="#fotos" className={`font-medium hover:text-gc-primary2 transition-colors ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Minhas fotos</a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -52,7 +52,7 @@ const Header = () => {
             <a href="#sobre" className="text-gray-700 font-medium py-2 hover:text-gc-primary2" onClick={toggleMenu}>Sobre</a>
             <a href="#servicos" className="text-gray-700 font-medium py-2 hover:text-gc-primary2" onClick={toggleMenu}>Serviços</a>
             <a href="#aparelhos" className="text-gray-700 font-medium py-2 hover:text-gc-primary2" onClick={toggleMenu}>Aparelhos</a>
-            <a href="#fotos" className="text-gray-700 font-medium py-2 hover:text-gc-primary2" onClick={toggleMenu}>Fotos dos meus serviços</a>
+            <a href="#fotos" className="text-gray-700 font-medium py-2 hover:text-gc-primary2" onClick={toggleMenu}>Minhas fotos</a>
             <a href="#contato" className="btn-primary text-center" onClick={toggleMenu}>Agende sua consulta</a>
           </div>
         </div>

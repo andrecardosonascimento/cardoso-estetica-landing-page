@@ -1,5 +1,5 @@
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   Carousel,
   CarouselContent,
@@ -8,69 +8,50 @@ import {
   CarouselPrevious
 } from "@/components/ui/carousel";
 
-// Imagens dos serviços - atualizadas para os novos uploads
+// Atualização de imagens para as novas fotos dos serviços
 const servicosImages = [
   {
     id: 1,
-    title: "Tratamento de Radiofrequência",
-    image: "/lovable-uploads/ed1d2c8c-2cb5-400e-ae12-30152f445e90.png"
+    image: "/lovable-uploads/da3df73b-ab3b-4317-8453-f848e678e818.png"
   },
   {
     id: 2,
-    title: "Tratamento de Ultrassom",
-    image: "/lovable-uploads/e46148e1-e9a1-4e80-8908-7a9f07959e50.png"
+    image: "/lovable-uploads/9d611f19-7211-4142-8efc-72e8971fdde9.png"
   },
   {
     id: 3,
-    title: "Tratamento Facial",
-    image: "/lovable-uploads/e67e801e-931f-42bd-84c5-6e642e78999f.png"
+    image: "/lovable-uploads/4742658a-448a-4d1d-a966-0a02071d7546.png"
   },
   {
     id: 4,
-    title: "Tratamento de Radiofrequência Facial",
-    image: "/lovable-uploads/426c504e-57f3-4949-80d0-18a95cf56edf.png"
+    image: "/lovable-uploads/d1bba54f-6a58-43a6-8cf3-ced041abdeb0.png"
   },
   {
     id: 5,
-    title: "Tratamento de Corrente Russa",
-    image: "/lovable-uploads/b6e7004c-9ed2-4106-ab4d-1cb19055ef3c.png"
+    image: "/lovable-uploads/50b33a12-8eb8-47b8-88cc-9c113414d5ca.png"
+  },
+  {
+    id: 6,
+    image: "/lovable-uploads/153416fb-b7e1-46b5-a306-a802dfeb0ad0.png"
+  },
+  {
+    id: 7,
+    image: "/lovable-uploads/5e67fe52-1d42-4fc1-ae4d-c710b2fa80ce.png"
+  },
+  {
+    id: 8,
+    image: "/lovable-uploads/2182fafd-142c-4d9a-a7b7-ae961ff00113.png"
   }
 ];
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
-  
-  const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-  
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-  
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-    
-    if (isLeftSwipe) {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % servicosImages.length);
-    } else if (isRightSwipe) {
-      setActiveIndex((prevIndex) => (prevIndex - 1 + servicosImages.length) % servicosImages.length);
-    }
-    
-    setTouchStart(null);
-    setTouchEnd(null);
-  };
 
   return (
-    <section id="fotos" className="section-padding">
+    <section id="fotos" className="section-padding bg-gray-50">
       <div className="container mx-auto container-padding">
         <div className="text-center mb-12 reveal">
-          <h2 className="section-title">Fotos dos meus serviços</h2>
+          <h2 className="section-title">Minhas fotos</h2>
           <p className="section-subtitle">Confira alguns dos resultados dos tratamentos</p>
         </div>
         
@@ -83,12 +64,9 @@ const Testimonials = () => {
                     <div className="overflow-hidden rounded-xl aspect-square relative">
                       <img 
                         src={item.image} 
-                        alt={item.title}
+                        alt="Tratamento estético" 
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
                       />
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                        <h3 className="text-white font-playfair text-lg">{item.title}</h3>
-                      </div>
                     </div>
                   </div>
                 </CarouselItem>

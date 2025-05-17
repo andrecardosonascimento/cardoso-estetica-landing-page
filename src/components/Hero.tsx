@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/lovable-uploads/e67e801e-931f-42bd-84c5-6e642e78999f.png" 
+          src="/lovable-uploads/da3df73b-ab3b-4317-8453-f848e678e818.png" 
           alt="Tratamento estético facial" 
           className="w-full h-full object-cover"
         />
@@ -17,7 +17,7 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center text-white">
         <div className="animate-fade-in">
-          <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-2 text-white drop-shadow-lg tracking-wide">
+          <h1 className="font-playfair text-6xl md:text-7xl lg:text-8xl font-bold mb-2 text-white drop-shadow-lg tracking-wider">
             <span className="bg-gradient-to-r from-white via-gc-complement1 to-white bg-clip-text text-transparent animate-pulse">
               Gisele Cardoso
             </span>

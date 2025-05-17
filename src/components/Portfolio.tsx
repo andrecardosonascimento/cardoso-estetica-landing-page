@@ -11,7 +11,7 @@ const aparelhosItems = [
     title: "Corrente Russa",
     description: "A corrente russa serve para tonificar e fortalecer a musculatura, melhorar a circulação sanguínea e promover a drenagem linfática, além de combater a flacidez.",
     benefits: "Fortalecimento muscular, melhora da circulação, combate à flacidez, tonificação de abdômen, glúteos e coxas.",
-    image: "/lovable-uploads/ed1d2c8c-2cb5-400e-ae12-30152f445e90.png",
+    image: "/lovable-uploads/da3df73b-ab3b-4317-8453-f848e678e818.png",
     icon: <Zap className="w-10 h-10 text-white" />
   },
   {
@@ -19,7 +19,7 @@ const aparelhosItems = [
     title: "Ultrassom",
     description: "A ultracavitação com ultrassom é uma técnica estética não invasiva que utiliza ondas sonoras para eliminar a gordura localizada e remodelar o corpo.",
     benefits: "Redução de gordura localizada, alternativa não invasiva à lipoaspiração, diminuição da celulite, resultados visíveis sem incisões.",
-    image: "/lovable-uploads/e46148e1-e9a1-4e80-8908-7a9f07959e50.png",
+    image: "/lovable-uploads/4742658a-448a-4d1d-a966-0a02071d7546.png",
     icon: <Radio className="w-10 h-10 text-white" />
   },
   {
@@ -59,7 +59,7 @@ const Portfolio = () => {
           <p className="section-subtitle">Conheça os equipamentos que utilizo em meus tratamentos</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 sm:px-8">
           {aparelhosItems.map((item) => (
             <div key={item.id} className="reveal">
               <div 
@@ -95,7 +95,7 @@ const Portfolio = () => {
               <img 
                 src={selectedItem.image} 
                 alt={selectedItem.title} 
-                className={`w-full h-auto ${selectedItem.title === "Ultrassom" ? "max-h-[280px] object-contain" : ""}`}
+                className="w-full h-auto max-h-[280px] object-contain"
               />
               <button 
                 className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg"

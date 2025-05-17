@@ -93,12 +93,6 @@ const facialServicesData = [
     description: "Promove tratamento facial de flacidez, rejuvenescimento, rugas, cicatriz de acne, melhora a hidratação da pele com aparelho KLD."
   },
   {
-    id: 14,
-    icon: <Scissors className="w-10 h-10 text-gc-primary1" />,
-    title: "Depilação na Cera",
-    description: "A depilação com cera é uma técnica eficaz para eliminar os pelos da pele, proporcionando um toque liso e suave por um período mais prolongado em comparação com métodos como a lâmina. Ao remover os pelos pela raiz, a cera atrasa o crescimento, e, com o passar do tempo, pode diminuir tanto a quantidade quanto a espessura dos pelos."
-  },
-  {
     id: 15,
     icon: <Scissors className="w-10 h-10 text-gc-primary1" />,
     title: "Design de Sobrancelha",
