@@ -8,11 +8,11 @@ import {
   CarouselPrevious
 } from "@/components/ui/carousel";
 
-// Reordered images array according to the user's specifications
+// Reordered images array with 8th and 1st photos swapped
 const servicosImages = [
   {
     id: 1,
-    image: "/lovable-uploads/5e67fe52-1d42-4fc1-ae4d-c710b2fa80ce.png" // Was 7th photo, now 1st
+    image: "/lovable-uploads/2182fafd-142c-4d9a-a7b7-ae961ff00113.png" // Was 8th photo, now 1st
   },
   {
     id: 2,
@@ -40,7 +40,7 @@ const servicosImages = [
   },
   {
     id: 8,
-    image: "/lovable-uploads/2182fafd-142c-4d9a-a7b7-ae961ff00113.png" // Keeping 8th photo in same position
+    image: "/lovable-uploads/5e67fe52-1d42-4fc1-ae4d-c710b2fa80ce.png" // Was 1st photo, now 8th
   },
   {
     id: 9,
