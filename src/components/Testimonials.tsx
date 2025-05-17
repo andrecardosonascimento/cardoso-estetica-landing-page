@@ -8,43 +8,43 @@ import {
   CarouselPrevious
 } from "@/components/ui/carousel";
 
-// Updated images array with the new photos
+// Reordered images array according to the user's specifications
 const servicosImages = [
   {
     id: 1,
-    image: "/lovable-uploads/1670f0cb-9e40-4e07-9a5d-c63a6218efe5.png" // 1st photo replaced
+    image: "/lovable-uploads/5e67fe52-1d42-4fc1-ae4d-c710b2fa80ce.png" // Was 7th photo, now 1st
   },
   {
     id: 2,
-    image: "/lovable-uploads/6c0f0f80-8996-467a-94ff-0f33f5f18f27.png" // 2nd photo replaced
+    image: "/lovable-uploads/6c0f0f80-8996-467a-94ff-0f33f5f18f27.png" // Keeping 2nd photo in same position
   },
   {
     id: 3,
-    image: "/lovable-uploads/dfc5eef3-7329-4495-b166-2f9e8c328b1f.png" // 3rd photo replaced
+    image: "/lovable-uploads/d1bba54f-6a58-43a6-8cf3-ced041abdeb0.png" // Was 4th photo, now 3rd
   },
   {
     id: 4,
-    image: "/lovable-uploads/d1bba54f-6a58-43a6-8cf3-ced041abdeb0.png" // keep existing 4th photo
+    image: "/lovable-uploads/6d9963ca-dd15-46d9-bb26-0a7f2cf60a17.png" // Was 6th photo, now 4th
   },
   {
     id: 5,
-    image: "/lovable-uploads/50b33a12-8eb8-47b8-88cc-9c113414d5ca.png" // keep existing 5th photo
+    image: "/lovable-uploads/dfc5eef3-7329-4495-b166-2f9e8c328b1f.png" // Was 3rd photo, now 5th
   },
   {
     id: 6,
-    image: "/lovable-uploads/6d9963ca-dd15-46d9-bb26-0a7f2cf60a17.png" // 6th photo replaced
+    image: "/lovable-uploads/50b33a12-8eb8-47b8-88cc-9c113414d5ca.png" // Was 5th photo, now 6th
   },
   {
     id: 7,
-    image: "/lovable-uploads/5e67fe52-1d42-4fc1-ae4d-c710b2fa80ce.png" // keep existing 7th photo
+    image: "/lovable-uploads/1670f0cb-9e40-4e07-9a5d-c63a6218efe5.png" // Was 1st photo, now 7th
   },
   {
     id: 8,
-    image: "/lovable-uploads/2182fafd-142c-4d9a-a7b7-ae961ff00113.png" // keep existing 8th photo
+    image: "/lovable-uploads/2182fafd-142c-4d9a-a7b7-ae961ff00113.png" // Keeping 8th photo in same position
   },
   {
     id: 9,
-    image: "/lovable-uploads/abefd90d-042c-487d-a6aa-b02501ea4c06.png" // new added photo
+    image: "/lovable-uploads/abefd90d-042c-487d-a6aa-b02501ea4c06.png" // Keeping 9th photo in same position
   }
 ];
 
