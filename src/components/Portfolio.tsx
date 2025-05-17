@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import {
   Zap,
@@ -8,12 +9,12 @@ import {
 
 const aparelhosItems = [
   {
-    id: 1,
-    title: "Corrente Russa",
-    description: "A corrente russa serve para tonificar e fortalecer a musculatura, melhorar a circulação sanguínea e promover a drenagem linfática, além de combater a flacidez.",
-    benefits: "Fortalecimento muscular, melhora da circulação, combate à flacidez, tonificação de abdômen, glúteos e coxas.",
-    image: "/lovable-uploads/787bade0-ff79-418c-8c78-c90470c0e9b9.png", // Corrente russa image
-    icon: <Zap className="w-10 h-10 text-white" />
+    id: 4,
+    title: "Radiofrequência",
+    description: "As ondas eletromagnéticas da radiofrequência aquecem a pele, causando contração do colágeno e estimulando a produção de novo colágeno.",
+    benefits: "Redução de flacidez, melhora na aparência da celulite, estímulo de colágeno, eliminação de toxinas, aparência de pele mais firme e jovem.",
+    image: "/lovable-uploads/8af92cc9-c472-416f-a838-027ed734d6e4.png", // Nova imagem de radiofrequência
+    icon: <Radio className="w-10 h-10 text-white" />
   },
   {
     id: 2,
@@ -32,20 +33,12 @@ const aparelhosItems = [
     icon: <Radio className="w-10 h-10 text-white" />
   },
   {
-    id: 4,
-    title: "Radiofrequência",
-    description: "As ondas eletromagnéticas da radiofrequência aquecem a pele, causando contração do colágeno e estimulando a produção de novo colágeno.",
-    benefits: "Redução de flacidez, melhora na aparência da celulite, estímulo de colágeno, eliminação de toxinas, aparência de pele mais firme e jovem.",
-    image: "/lovable-uploads/8af92cc9-c472-416f-a838-027ed734d6e4.png", // Nova imagem de radiofrequência
-    icon: <Radio className="w-10 h-10 text-white" />
-  },
-  {
-    id: 5,
-    title: "Vapor de Ozônio",
-    description: "Vapor de ozônio representa um avanço significativo no campo da estética, oferecendo um método natural e eficaz para o cuidado da pele.",
-    benefits: "Este tratamento é especialmente valioso para aqueles que buscam renovação, no combate à acne e na conquista de uma aparência radiante. Os resultados são visíveis e certamente promoverão uma pele mais saudável e luminosa.",
-    image: "/lovable-uploads/02fce216-f3ae-40b0-83cc-46a9044af09e.png", // Updated Vapor de ozônio image
-    icon: <Circle className="w-10 h-10 text-white" />
+    id: 1,
+    title: "Corrente Russa",
+    description: "A corrente russa serve para tonificar e fortalecer a musculatura, melhorar a circulação sanguínea e promover a drenagem linfática, além de combater a flacidez.",
+    benefits: "Fortalecimento muscular, melhora da circulação, combate à flacidez, tonificação de abdômen, glúteos e coxas.",
+    image: "/lovable-uploads/787bade0-ff79-418c-8c78-c90470c0e9b9.png", // Corrente russa image
+    icon: <Zap className="w-10 h-10 text-white" />
   },
   {
     id: 6,
@@ -62,6 +55,14 @@ const aparelhosItems = [
     benefits: "É eficaz em contextos pós-operatórios e em tratamentos como depilação, foliculite, psoríase, e na podologia para micoses e frieiras. Sua multifuncionalidade permite a adaptação de produtos às necessidades específicas da pele, sendo amplamente utilizado em protocolos estéticos.",
     image: "/lovable-uploads/59c023c6-7760-4e52-867e-aaf7701ac17b.png", // Autofrequência image
     icon: <Image className="w-10 h-10 text-white" />
+  },
+  {
+    id: 5,
+    title: "Vapor de Ozônio",
+    description: "Vapor de ozônio representa um avanço significativo no campo da estética, oferecendo um método natural e eficaz para o cuidado da pele.",
+    benefits: "Este tratamento é especialmente valioso para aqueles que buscam renovação, no combate à acne e na conquista de uma aparência radiante. Os resultados são visíveis e certamente promoverão uma pele mais saudável e luminosa.",
+    image: "/lovable-uploads/02fce216-f3ae-40b0-83cc-46a9044af09e.png", // Updated Vapor de ozônio image
+    icon: <Circle className="w-10 h-10 text-white" />
   }
 ];
 
