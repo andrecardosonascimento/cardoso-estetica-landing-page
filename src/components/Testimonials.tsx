@@ -8,39 +8,43 @@ import {
   CarouselPrevious
 } from "@/components/ui/carousel";
 
-// Atualização de imagens para as novas fotos dos serviços
+// Updated images array with the new photos
 const servicosImages = [
   {
     id: 1,
-    image: "/lovable-uploads/da3df73b-ab3b-4317-8453-f848e678e818.png"
+    image: "/lovable-uploads/1670f0cb-9e40-4e07-9a5d-c63a6218efe5.png" // 1st photo replaced
   },
   {
     id: 2,
-    image: "/lovable-uploads/9d611f19-7211-4142-8efc-72e8971fdde9.png"
+    image: "/lovable-uploads/6c0f0f80-8996-467a-94ff-0f33f5f18f27.png" // 2nd photo replaced
   },
   {
     id: 3,
-    image: "/lovable-uploads/4742658a-448a-4d1d-a966-0a02071d7546.png"
+    image: "/lovable-uploads/dfc5eef3-7329-4495-b166-2f9e8c328b1f.png" // 3rd photo replaced
   },
   {
     id: 4,
-    image: "/lovable-uploads/d1bba54f-6a58-43a6-8cf3-ced041abdeb0.png"
+    image: "/lovable-uploads/d1bba54f-6a58-43a6-8cf3-ced041abdeb0.png" // keep existing 4th photo
   },
   {
     id: 5,
-    image: "/lovable-uploads/50b33a12-8eb8-47b8-88cc-9c113414d5ca.png"
+    image: "/lovable-uploads/50b33a12-8eb8-47b8-88cc-9c113414d5ca.png" // keep existing 5th photo
   },
   {
     id: 6,
-    image: "/lovable-uploads/153416fb-b7e1-46b5-a306-a802dfeb0ad0.png"
+    image: "/lovable-uploads/6d9963ca-dd15-46d9-bb26-0a7f2cf60a17.png" // 6th photo replaced
   },
   {
     id: 7,
-    image: "/lovable-uploads/5e67fe52-1d42-4fc1-ae4d-c710b2fa80ce.png"
+    image: "/lovable-uploads/5e67fe52-1d42-4fc1-ae4d-c710b2fa80ce.png" // keep existing 7th photo
   },
   {
     id: 8,
-    image: "/lovable-uploads/2182fafd-142c-4d9a-a7b7-ae961ff00113.png"
+    image: "/lovable-uploads/2182fafd-142c-4d9a-a7b7-ae961ff00113.png" // keep existing 8th photo
+  },
+  {
+    id: 9,
+    image: "/lovable-uploads/abefd90d-042c-487d-a6aa-b02501ea4c06.png" // new added photo
   }
 ];
 
