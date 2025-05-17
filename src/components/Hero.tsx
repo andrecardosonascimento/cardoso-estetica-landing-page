@@ -7,8 +7,8 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/lovable-uploads/2f401a4f-a6a6-4b0d-87a6-b34b649461fc.png" 
-          alt="Tratamento estético facial" 
+          src="/lovable-uploads/042d7c86-24fe-40a5-87cc-f62cecb529c1.png" 
+          alt="Sala de tratamento estético" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 hero-gradient"></div>
