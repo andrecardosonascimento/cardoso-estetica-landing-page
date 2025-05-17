@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {
   Zap,
@@ -37,7 +36,7 @@ const aparelhosItems = [
     title: "Radiofrequência",
     description: "As ondas eletromagnéticas da radiofrequência aquecem a pele, causando contração do colágeno e estimulando a produção de novo colágeno.",
     benefits: "Redução de flacidez, melhora na aparência da celulite, estímulo de colágeno, eliminação de toxinas, aparência de pele mais firme e jovem.",
-    image: "/lovable-uploads/08fd3301-dc2e-4f23-9b67-0a6121b4c06f.png", // Swapped to ultrassom image
+    image: "/lovable-uploads/8af92cc9-c472-416f-a838-027ed734d6e4.png", // Nova imagem de radiofrequência
     icon: <Radio className="w-10 h-10 text-white" />
   },
   {
