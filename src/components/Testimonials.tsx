@@ -56,7 +56,6 @@ const Testimonials = () => {
       <div className="container mx-auto container-padding">
         <div className="text-center mb-12 reveal">
           <h2 className="section-title">Minhas fotos</h2>
-          <p className="section-subtitle">Confira alguns dos resultados dos tratamentos</p>
         </div>
         
         <div className="max-w-5xl mx-auto px-4">

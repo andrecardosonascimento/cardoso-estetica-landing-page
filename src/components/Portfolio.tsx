@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import {
   Zap,
-  Radio
+  Radio,
+  Image,
+  Circle
 } from 'lucide-react';
 
 const aparelhosItems = [
@@ -37,6 +39,30 @@ const aparelhosItems = [
     benefits: "Redução de flacidez, melhora na aparência da celulite, estímulo de colágeno, eliminação de toxinas, aparência de pele mais firme e jovem.",
     image: "/lovable-uploads/08fd3301-dc2e-4f23-9b67-0a6121b4c06f.png", // Swapped to ultrassom image
     icon: <Radio className="w-10 h-10 text-white" />
+  },
+  {
+    id: 5,
+    title: "Vapor de Ozônio",
+    description: "Vapor de ozônio representa um avanço significativo no campo da estética, oferecendo um método natural e eficaz para o cuidado da pele.",
+    benefits: "Este tratamento é especialmente valioso para aqueles que buscam renovação, no combate à acne e na conquista de uma aparência radiante. Os resultados são visíveis e certamente promoverão uma pele mais saudável e luminosa.",
+    image: "/lovable-uploads/0660deef-3821-4756-9a48-baf590276c7c.png", // Vapor de ozônio image
+    icon: <Circle className="w-10 h-10 text-white" />
+  },
+  {
+    id: 6,
+    title: "Endermoterapia",
+    description: "Endermoterapia é um tratamento estético que utiliza um dispositivo equipado com rolos e sucção para massagear e estimular a pele.",
+    benefits: "Seu objetivo é melhorar a circulação sanguínea e linfática, reduzir a gordura localizada, combater a celulite e a flacidez, além de promover a remodelação corporal.",
+    image: "/lovable-uploads/3a132990-073d-45b6-bbf3-1e887cf0cb22.png", // Endermoterapia image
+    icon: <Circle className="w-10 h-10 text-white" />
+  },
+  {
+    id: 7,
+    title: "Autofrequência",
+    description: "A Alta Frequência é um dispositivo bactericida e antisséptico usado para limpeza de pele, revitalização facial e desinfecção do couro cabeludo.",
+    benefits: "É eficaz em contextos pós-operatórios e em tratamentos como depilação, foliculite, psoríase, e na podologia para micoses e frieiras. Sua multifuncionalidade permite a adaptação de produtos às necessidades específicas da pele, sendo amplamente utilizado em protocolos estéticos.",
+    image: "/lovable-uploads/59c023c6-7760-4e52-867e-aaf7701ac17b.png", // Autofrequência image
+    icon: <Image className="w-10 h-10 text-white" />
   }
 ];
 
@@ -59,7 +85,7 @@ const Portfolio = () => {
           <p className="section-subtitle">Conheça os equipamentos que utilizo em meus tratamentos</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 sm:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-8">
           {aparelhosItems.map((item) => (
             <div key={item.id} className="reveal">
               <div 
