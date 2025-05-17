@@ -11,7 +11,7 @@ const aparelhosItems = [
     title: "Corrente Russa",
     description: "A corrente russa serve para tonificar e fortalecer a musculatura, melhorar a circulação sanguínea e promover a drenagem linfática, além de combater a flacidez.",
     benefits: "Fortalecimento muscular, melhora da circulação, combate à flacidez, tonificação de abdômen, glúteos e coxas.",
-    image: "/lovable-uploads/787bade0-ff79-418c-8c78-c90470c0e9b9.png", // Updated to corrente_russa image
+    image: "/lovable-uploads/787bade0-ff79-418c-8c78-c90470c0e9b9.png", // Corrente russa image
     icon: <Zap className="w-10 h-10 text-white" />
   },
   {
@@ -19,7 +19,7 @@ const aparelhosItems = [
     title: "Ultrassom",
     description: "A ultracavitação com ultrassom é uma técnica estética não invasiva que utiliza ondas sonoras para eliminar a gordura localizada e remodelar o corpo.",
     benefits: "Redução de gordura localizada, alternativa não invasiva à lipoaspiração, diminuição da celulite, resultados visíveis sem incisões.",
-    image: "/lovable-uploads/08fd3301-dc2e-4f23-9b67-0a6121b4c06f.png", // Updated to ultrassom image
+    image: "/lovable-uploads/73e710aa-3954-4ea5-ad35-fd229b9e851e.png", // Swapped to radiofrequencia image
     icon: <Radio className="w-10 h-10 text-white" />
   },
   {
@@ -27,7 +27,7 @@ const aparelhosItems = [
     title: "Manta térmica",
     description: "Ajuda na queima de gordura através do calor, contribuindo para a redução de gordura localizada e acelerando o metabolismo.",
     benefits: "Aumento da queima de calorias, maior eliminação de toxinas, redução de medidas, potencialização de outros tratamentos.",
-    image: "/lovable-uploads/dfcf1e8b-ac6b-45a3-83ad-6ec48610b5c7.png", // Updated to manta_termica image
+    image: "/lovable-uploads/dfcf1e8b-ac6b-45a3-83ad-6ec48610b5c7.png", // Manta termica image
     icon: <Radio className="w-10 h-10 text-white" />
   },
   {
@@ -35,7 +35,7 @@ const aparelhosItems = [
     title: "Radiofrequência",
     description: "As ondas eletromagnéticas da radiofrequência aquecem a pele, causando contração do colágeno e estimulando a produção de novo colágeno.",
     benefits: "Redução de flacidez, melhora na aparência da celulite, estímulo de colágeno, eliminação de toxinas, aparência de pele mais firme e jovem.",
-    image: "/lovable-uploads/73e710aa-3954-4ea5-ad35-fd229b9e851e.png", // Updated to radiofrequencia image
+    image: "/lovable-uploads/08fd3301-dc2e-4f23-9b67-0a6121b4c06f.png", // Swapped to ultrassom image
     icon: <Radio className="w-10 h-10 text-white" />
   }
 ];
